@@ -279,7 +279,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #f0bc55; outline-offs
   .site-nav a { padding: 14px 3px; border-bottom: 1px solid rgba(255,255,255,.15); font-size: 12px; }
   .site-nav a::after { display: none; }
   .toast { right: var(--gutter); bottom: calc(82px + env(safe-area-inset-bottom)); }
-  .hero-video { object-position: 59% center; }
+  .hero-video { object-position: 59% center; transform: scale(1.04); }
   .hero-shade { background: linear-gradient(90deg, rgba(29,14,12,.78), rgba(29,14,12,.43) 72%, rgba(29,14,12,.26)), linear-gradient(0deg, rgba(26,16,12,.35), transparent 40%); }
   .hero-content { padding-top: 34px; }
   .hero-eyebrow { max-width: 270px; font-size: 8px; letter-spacing: .12em; }
@@ -338,15 +338,49 @@ button:focus-visible, a:focus-visible { outline: 3px solid #f0bc55; outline-offs
   .copyright { grid-column: 2; grid-row: 3; }
 }
 
+@media (max-width: 520px) {
+  :root { --gutter: 18px; }
+  .hero-content { padding-top: 20px; }
+  .hero-content h1 { font-size: clamp(38px, 10.5vw, 50px); }
+  .hero-copy { font-size: 12px; }
+  .hero-bottom { bottom: calc(18px + env(safe-area-inset-bottom)); }
+  .hero-note { font-size: 8px; }
+  .scroll-note { display: none; }
+  .section-space { padding-block: 60px; }
+  .section-heading h2 { font-size: clamp(39px, 10vw, 54px); }
+  .reviews-heading h2 { font-size: clamp(40px, 10.5vw, 56px); }
+  .menu-grid { grid-template-columns: 1fr; gap: 12px; }
+  .menu-card { display: grid; grid-template-columns: minmax(96px, .72fr) minmax(0, 1.28fr); align-items: stretch; }
+  .product-media { aspect-ratio: auto; min-height: 186px; }
+  .product-info { min-width: 0; padding: 14px 12px; }
+  .product-kicker { min-height: 0; font-size: 8px; }
+  .product-info h3 { min-height: 0; font-size: clamp(16px, 4.7vw, 20px); }
+  .product-info > p:not(.product-kicker) { min-height: 0; margin: 7px 0 10px; font-size: 11px; line-height: 1.45; }
+  .product-buy { gap: 7px; padding-top: 9px; }
+  .add-button { min-height: 40px; font-size: 9px; }
+  .review-stage { min-height: 245px; }
+  .review-card { padding: 22px 18px; }
+  .impact-section { min-height: min(520px, 68svh); }
+  .impact-content { padding-block: 72px; }
+  .impact-content h2 { font-size: clamp(42px, 10vw, 64px); }
+  .contact-banner { padding: 25px 19px; }
+  .contact-banner h2 { font-size: clamp(32px, 8.3vw, 44px); }
+  .contact-details { gap: 25px; }
+  .address-block address { font-size: 20px; }
+  .map-frame, .map-frame iframe { min-height: 220px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 15px; padding-block: 25px; }
+  .footer-nav { grid-column: auto; grid-row: auto; flex-wrap: wrap; gap: 18px; }
+  .footer-inner > p, .copyright { grid-column: auto; grid-row: auto; justify-self: start; }
+}
+
 @media (max-width: 380px) {
   :root { --gutter: 16px; }
   .brand-type strong { font-size: 11px; }
   .hero-content h1 { font-size: 38px; }
   .hero-eyebrow { font-size: 7px; }
-  .menu-grid { gap: 10px; }
-  .product-info { padding-inline: 8px; }
-  .product-info h3 { font-size: 15px; }
-  .product-info > p:not(.product-kicker) { font-size: 8px; }
+  .product-info { padding-inline: 10px; }
+  .product-info h3 { font-size: 16px; }
+  .product-info > p:not(.product-kicker) { font-size: 10px; }
   .review-stage { min-height: 285px; }
 }
 
